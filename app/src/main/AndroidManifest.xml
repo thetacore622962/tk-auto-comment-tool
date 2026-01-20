@@ -1,0 +1,75 @@
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.madhub.tkautocommenttool">
+
+    <!-- 
+        This AndroidManifest file configures the tk auto comment tool, 
+        leveraging MadHub's powerful automation capabilities for efficient 
+        social media management. The app is designed to run seamlessly 
+        on real Android devices, cloud phones, or emulators.
+    -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        
+        <!-- 
+            MainActivity serves as the entry point for 
+            the tk auto comment tool, providing users with 
+            an intuitive interface for configuring and controlling 
+            automated actions. 
+        -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 
+            AutomationService is responsible for executing 
+            background operations that enable 24/7 automation 
+            of social media interactions. This service is 
+            vital for ensuring continuous and reliable performance. 
+        -->
+        <service android:name=".AutomationService" />
+
+    </application>
+
+    <!-- 
+        Permission declarations are essential for enabling 
+        the application's core functionality. These permissions 
+        allow the app to access the network and external storage 
+        necessary for social media interactions and content management.
+    -->
+
+    <!-- 
+        This powerful permission enables the app to access the Internet, 
+        facilitating communication with social media platforms for 
+        automated tasks like content scheduling and management. 
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 
+        Comprehensive capability for reading and writing to the device's 
+        external storage, allowing the app to manage media files and 
+        related assets required for automation tasks. 
+    -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 
+        This flexible configuration option grants the app 
+        the ability to access network state, which is crucial for 
+        managing connectivity and ensuring uninterrupted operations. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+</manifest>
+``` 
+
+This configuration file highlights the features of the tk auto comment tool, emphasizing MadHub's automation capabilities and the essential components required for successful app operation.
