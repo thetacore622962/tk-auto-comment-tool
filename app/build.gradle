@@ -1,0 +1,85 @@
+```groovy
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        // Google's Maven repository for Android dependencies
+        google()
+        // Maven Central repository for other libraries
+        mavenCentral()
+    }
+    dependencies {
+        // Gradle Android plugin for building Android apps
+        classpath 'com.android.tools.build:gradle:7.4.0'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 34 // Specifies the Android SDK version to compile against
+    defaultConfig {
+        applicationId "com.madhub.tkautocommenttool" // Unique ID for the application
+        minSdkVersion 21 // Minimum SDK version for application compatibility
+        targetSdkVersion 34 // Target SDK version to ensure app is up-to-date
+        versionCode 1 // Version code for the app
+        versionName "1.0.0" // Version name for the app
+        // Specify supported language configurations
+        resConfigs "en" // This ensures that only English resources are included
+    }
+    buildTypes {
+        release {
+            minifyEnabled false // Do not use ProGuard for release builds
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    // Dependency for AndroidX support libraries, ensuring backward compatibility
+    implementation 'androidx.appcompat:appcompat:1.6.1' // Provides backward-compatible UI features
+
+    // Dependency for Google Material Design components
+    implementation 'com.google.android.material:material:1.9.0' // For enhanced UI elements and design components
+    
+    // Dependency for Retrofit, a type-safe HTTP client for Android
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' // Useful for making network requests to social media platforms
+    
+    // Dependency for Gson for JSON serialization and deserialization
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' // Useful for converting API responses into Java objects
+    
+    // Dependency for OkHttp, an HTTP client for Android
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0' // For efficient network communication
+    
+    // Dependency for Kotlin Coroutines for asynchronous programming
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3' // For easier handling of background operations
+
+    // Dependency for Room, a persistence library
+    implementation 'androidx.room:room-runtime:2.5.1' // Helpful for managing local data storage
+
+    // Optional: Dependency for lifecycle-aware components
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2' // Provides lifecycle management for UI components
+}
+
+// Configure Kotlin options (if using Kotlin)
+kotlinOptions {
+    jvmTarget = "1.8" // Specify the target JVM version
+}
+
+// Usage Scenario:
+// This build.gradle configuration is designed for the MadHub application. In this scenario,
+// we are developing a social media management tool that automates content scheduling and publishing
+// across platforms like Facebook, Instagram, and TikTok. 
+
+// Step-by-Step Workflow:
+// 1. The application will use Retrofit to manage API interactions with social media platforms,
+//    ensuring that all requests are seamless and efficient.
+// 2. Gson will be employed to handle JSON responses from the APIs, converting them 
+//    into structured Java objects for easier manipulation.
+// 3. The addition of Room will facilitate efficient local data storage, allowing for offline capabilities
+//    and faster load times, which is critical for an automation tool that requires continuous operation.
+// 4. Kotlin Coroutines will help manage background tasks, ensuring the application remains responsive while 
+//    performing operations like data fetching and posting content.
+// 5. This configuration supports the installation on real Android devices, cloud phones, or emulators,
+//    enabling 24/7 automated operations in compliance with Android platform standards.
+
+```
